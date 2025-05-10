@@ -22,3 +22,11 @@ body, html {
     border-radius: var(--border-radius);
     background-color: var(--card-background-color);
   }
+
+  .Profile {
+    display: none;
+  }
+
+  #error-message {
+    display: none;
+  }

@@ -6,20 +6,32 @@
     <link rel="stylesheet" href="style.css">
     <title>GraphQl</title>
     <script src="JS/authentication.js"></script>
+    <script src="JS/Profile.js"></script>
 </head>
 <body>
     <header>
 
     </header>
     <main class="centered-container">
-    <article class="login-card">
-      <h2>Login</h2>
-      <label>Email or Username</label>
-      <input type="text" id="username" placeholder="Enter your Email Or Username" />
-      <label>Password</label>
-      <input type="password" id="password" placeholder="Enter your Password" />
-      <button onclick="login()" type="submit">Log in</button>
-    </article>
+        <article id="Signin" class="login-card">
+        <h2>Login</h2>
+        <label>Email or Username</label>
+        <input type="text" id="username" placeholder="Enter your Email Or Username" />
+        <label>Password</label>
+        <input type="password" id="password" placeholder="Enter your Password" />
+        <p id="error-message" style="color: #b30000; padding: 1rem; border-radius: 0.5rem;"></p>
+        <button onclick="Signin()" type="submit">Log in</button>
+        </article>
+
+        <article id="Profile" class="Profile">
+            <h2>hmmm</h2>
+            <label>Sambosa</label>
+            <input type="text" id="username" placeholder="Enter your Email Or Username" />
+            <label>hambergur</label>
+            <input type="password" id="password" placeholder="Enter your Password" />
+            <p id="error-message" style="color: #b30000; padding: 1rem; border-radius: 0.5rem;"></p>
+            <button onclick="Signin()" type="submit">Log in</button>
+        </article>
   </main>
 
     

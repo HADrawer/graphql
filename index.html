@@ -9,9 +9,16 @@
     <script src="JS/Profile.js"></script>
 </head>
 <body>
-    <header>
-
-    </header>
+        <header id="profileHeader">
+            <div class="container">
+            <strong>Your Profile</strong>
+                <nav>
+                    <ul>
+                        <li ><button onclick="SignOut()" type="submit">Sign Out</button></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
     <main class="centered-container">
         <article id="Signin" class="login-card">
         <h2>Login</h2>
@@ -24,13 +31,8 @@
         </article>
 
         <article id="Profile" class="Profile">
-            <h2>hmmm</h2>
-            <label>Sambosa</label>
-            <input type="text" id="username" placeholder="Enter your Email Or Username" />
-            <label>hambergur</label>
-            <input type="password" id="password" placeholder="Enter your Password" />
-            <p id="error-message" style="color: #b30000; padding: 1rem; border-radius: 0.5rem;"></p>
-            <button onclick="Signin()" type="submit">Log in</button>
+            <h2>Login in has been successfully</h2>
+            
         </article>
   </main>
 

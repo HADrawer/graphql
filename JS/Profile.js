@@ -26,7 +26,7 @@ async function UserProfile() {
         const data = await fetchGraphql(graphQuery);
         const user = data.data.user[0];
         document.getElementById('username_title').textContent = `${user.login}`;
-        document.getElementById('Profile').innerHTML = `
+        document.getElementById('ProfileInfo').innerHTML = `
               <h2>User Profile</h2>
               <div class="container">
               <ul>

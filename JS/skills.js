@@ -1,4 +1,12 @@
 function skillsSVG(data){
+
+    const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const textColor = isDarkMode ? '#ffffff' : '#000000';
+    const gridColor = isDarkMode ? '#888' : '#ccc';
+    const polygonFill = isDarkMode ? '#1cd4a577' : '#1cd4a577';
+    const polygonStroke = '#1cd4a5';
+
+
     const svg = d3.select('#skillsChart');
     svg.selectAll('*').remove();
 
@@ -26,7 +34,7 @@ function skillsSVG(data){
 
 
     const angleSlice = (2 * Math.PI) / skills.length;
-    const maxValue = d3.max(skills, d => d.amount);
+    const maxValue = 100;
 
     // Draw circular grid
     for (let lvl = 1; lvl <= levels; lvl++) {
@@ -36,29 +44,31 @@ function skillsSVG(data){
             .attr('cy', center.y)
             .attr('r', r)
             .attr('fill', 'none')
-            .attr('stroke', '#ccc')
+            .attr('stroke', gridColor)
             .attr('stroke-dasharray', '4 2');
     }
 
     // Axes and labels
     skills.forEach((skill, i) => {
         const angle = angleSlice * i - Math.PI / 2;
-        const x = center.x + Math.cos(angle) * radius;
-        const y = center.y + Math.sin(angle) * radius;
+        const x = center.x + Math.cos(angle) * (radius );
+        const y = center.y + Math.sin(angle) * (radius );
+
+        
 
         svg.append('line')
             .attr('x1', center.x)
             .attr('y1', center.y)
             .attr('x2', x)
             .attr('y2', y)
-            .attr('stroke', '#aaa');
+            .attr('stroke', gridColor);
 
         svg.append('text')
             .attr('x', x)
             .attr('y', y)
             .attr('text-anchor', 'middle')
             .attr('dy', '0.35em')
-            .style('fill', '#1cd4a5')
+            .style('fill', textColor)
             .text(skill.type);
     });
 
@@ -73,11 +83,16 @@ function skillsSVG(data){
 
     svg.append('polygon')
         .attr('points', points.map(p => p.join(',')).join(' '))
-        .attr('fill', '#1cd4a577')
-        .attr('stroke', '#1cd4a5')
+        .attr('fill', polygonFill)
+        .attr('stroke', polygonStroke)
         .attr('stroke-width', 2);
 
         window.addEventListener('resize', () => {
             skillsSVG(data);
         });
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+            skillsSVG(data); 
+        });
+        
 }

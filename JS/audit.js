@@ -63,7 +63,6 @@
             .style('fill', 'var(--color)')
             .text(`${(totaldown / 1000000).toFixed(2)} MB ↓`);
 
-        // Add ratio display
         Gsvg.append('text')
             .attr('x', 50)
             .attr('y', height - 20)
@@ -72,7 +71,6 @@
             .style('font-weight', 'bold')
             .text(ratioAudit);
 
-        // Add "Almost perfect!" text
         Gsvg.append('text')
             .attr('x', 140)
             .attr('y', height - 10)

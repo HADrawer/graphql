@@ -36,7 +36,6 @@ function skillsSVG(data){
     const angleSlice = (2 * Math.PI) / skills.length;
     const maxValue = 100;
 
-    // Draw circular grid
     for (let lvl = 1; lvl <= levels; lvl++) {
         const r = radius * (lvl / levels);
         svg.append('circle')

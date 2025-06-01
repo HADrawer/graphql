@@ -3,7 +3,6 @@
 async function Signin() {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
-    // const loginBtn = document.getElementById('login').value;
 
     const Userdata = btoa(`${username}:${password}`)
 
@@ -23,6 +22,7 @@ async function Signin() {
         localStorage.setItem('session', jwt)
 
         document.getElementById('Signin').style.display = 'none';
+        document.getElementById('centered-container-login').style.display = 'none';
         document.getElementById('Profile').style.display = 'block';
             document.getElementById('profileHeader').style.display = 'block';
 
@@ -38,6 +38,7 @@ async function Signin() {
 function SignOut(){
     localStorage.removeItem('session');
     document.getElementById('Signin').style.display = 'block';
+    document.getElementById('centered-container-login').style.display = 'flex';
     document.getElementById('Profile').style.display = 'none';
     document.getElementById('profileHeader').style.display = 'none';
 }
@@ -47,10 +48,13 @@ window.onload = () => {
     const sessionToken  = localStorage.getItem('session');
     if (sessionToken){
     document.getElementById('Signin').style.display = 'none';
+    document.getElementById('centered-container-login').style.display = 'none';
     document.getElementById('Profile').style.display = 'block';
     UserProfile()
     } else {
         document.getElementById('Signin').style.display = 'block';
+        document.getElementById('centered-container-login').style.display = 'flex';
+
         document.getElementById('Profile').style.display = 'none';
         document.getElementById('profileHeader').style.display = 'none';
 

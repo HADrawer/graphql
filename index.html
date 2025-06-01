@@ -19,7 +19,7 @@
                 </nav>
             </div>
         </header>
-    <main class="centered-container">
+    <main id="centered-container-login" class="centered-container">
         <article id="Signin" class="login-card">
         <h2>Login</h2>
         <label>Email or Username</label>
@@ -29,14 +29,22 @@
         <p id="error-message" style="color: #b30000; padding: 1rem; border-radius: 0.5rem;"></p>
         <button onclick="Signin()" type="submit">Log in</button>
         </article>
+        
+    </main>
+    <article>
 
         <article id="Profile" class="Profile">
-            <h2>Login in has been successfully</h2>
+                
+        </article>
+        <article id="audit">
+            <svg id="auditChart" width="100%" height="200"></svg>
             
         </article>
-  </main>
+    </article>
 
     
-    
+    <script src="JS/audit.js"></script>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+
 </body>
 </html>

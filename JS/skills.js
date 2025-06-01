@@ -76,4 +76,8 @@ function skillsSVG(data){
         .attr('fill', '#1cd4a577')
         .attr('stroke', '#1cd4a5')
         .attr('stroke-width', 2);
+
+        window.addEventListener('resize', () => {
+            skillsSVG(data);
+        });
 }

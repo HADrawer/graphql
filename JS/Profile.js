@@ -12,6 +12,11 @@ async function UserProfile() {
         auditRatio
         totalUp
         totalDown
+        skills: transactions(where: {type: {_like: "%skill_%"}}, order_by: {id: asc}) {
+               
+      					amount
+                type
+        }
     }
     }
     `;
@@ -35,6 +40,7 @@ async function UserProfile() {
 `;
 
         auditRatioSVG(user.totalUp , user.totalDown);
+        skillsSVG(user.skills);
     } catch(error){
         console.error('Error fetching data:', error);
     }

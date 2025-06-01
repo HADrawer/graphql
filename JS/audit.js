@@ -12,7 +12,7 @@
         svg.attr('viewbox',`0 0 ${width} ${height}`)
         .attr('preserveAspectRatio', 'xMidYMid meet');
 
-        const ratioAudit = (totalup / totaldown).toFixed(2);
+        const ratioAudit = (totalup / totaldown).toFixed(1);
 
         const margin = {top: 50 , left: 100 , right:100 , bottom:50};
         const Gsvg = svg.append('g').attr(`transform`, `translate(${margin.left}, ${margin.top})`);
@@ -64,7 +64,7 @@
             .text(`${(totaldown / 1000000).toFixed(2)} MB ↓`);
 
         // Add ratio display
-        svg.append('text')
+        Gsvg.append('text')
             .attr('x', 50)
             .attr('y', height - 20)
             .style('fill', 'var(--muted-color)')
@@ -73,7 +73,7 @@
             .text(ratioAudit);
 
         // Add "Almost perfect!" text
-        svg.append('text')
+        Gsvg.append('text')
             .attr('x', 140)
             .attr('y', height - 10)
             .style('fill', 'var(--muted-color)')

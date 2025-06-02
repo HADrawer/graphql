@@ -6,7 +6,7 @@
         const bbox = document.getElementById("auditChart").getBoundingClientRect();
 
         const width = bbox.width;
-        const height = 300;
+        const height = 600;
         const barHeight = 40;
 
         svg.attr('viewbox',`0 0 ${width} ${height}`)
@@ -63,21 +63,9 @@
             .style('fill', 'var(--color)')
             .text(`${(totaldown / 1000000).toFixed(2)} MB ↓`);
 
-        Gsvg.append('text')
-            .attr('x', 50)
-            .attr('y', height - 20)
-            .style('fill', 'var(--muted-color)')
-            .style('font-size', '48px')
-            .style('font-weight', 'bold')
-            .text(ratioAudit);
+      
 
-        Gsvg.append('text')
-            .attr('x', 140)
-            .attr('y', height - 10)
-            .style('fill', 'var(--muted-color)')
-            .style('font-size', '16px')
-            .text('Almost perfect!');
-
+        document.getElementById('ratio audit').innerText = "Your Ratio :"+ ratioAudit
             window.addEventListener('resize', () => {
                 auditRatioSVG(totalup, totaldown);
             });
